@@ -1,3 +1,9 @@
+let isLogged = localStorage.getItem("user")
+if(isLogged == null){
+    console.log("User not logged");
+    window.location.href = "../index.html"
+}
+
 
 let score = [];
 let currentQuestion = 0;
@@ -53,20 +59,24 @@ async function quizGame() {
                         <h2>Has respondido ${totalScore}/${pregsQuiz.results.length} preguntas correctamente</h2>
 
                         <div class="div-buttons-results">                    
-                            <button id="reload" class="button-registered">Guardar y recargar</button>
+                            <button id="reload" class="button-registered">Guardar y home</button>
                             <button id="exit" class="button-registered">Salir sin guardar</button>
                         </div>
                     </div>
                     `
 
-                    document.getElementById("reload").addEventListener("click", function (event) {
+                    document.getElementById("reload").addEventListener("click", async function (event) {
+                        console.log(localSdata);
+                        await saveScore(
+                            {email: localSdata[0].email ,fechascore: localSdata[0].fechascore , puntuacion: localSdata[0].puntuacion }
+                        )
                         event.preventDefault();
-                        location.reload();
+                        location.href="home.html";
                     });
 
                     document.getElementById("exit").addEventListener("click", function (event) {
                         event.preventDefault();
-                        location.href="../index.html";
+                        location.href="home.html";
                     });
 
             } else {
@@ -144,16 +154,9 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();// db representa mi BBDD
 
 
-const createUser = (user) => {
-db.collection("score")
-  .add(user)
-  .then((docRef) => console.log("Document written with ID: ", docRef.id))
-  .catch((error) => console.error("Error adding document: ", error));
+//---------------- save socre in firebase ----------------------//
+async function saveScore(score){
+    await db.collection("score").add(score)
+    .then((docRef) => console.log("Score written with ID: ", docRef.id))
+    .catch((error) => console.error("Error adding document: ", error));
 };
-
-
-const ref = db.collection('score').doc();
-ref.set({"email": localSdata[0].email,
-  "fechascore": localSdata[0].fechascore,
-  "puntuacion": localSdata[0].puntuacion
-});

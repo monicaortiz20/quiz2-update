@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <title>Home</title>
 </head>
 
@@ -14,19 +15,19 @@
         <h1 class="home">Home</h1>
         <section class="user-card">
             <div>
-                <h1>Your profile</h1>
+                <h1>Bienvenida</h1>
             </div>
+            <div id="loggedUsers"></div>
             <div>
-                <button class="button-registered" onclick="location.href='../pages/quiz.html';">¡Empezamos!</button>
+                <button id="startQuiz" class="button-registered" onclick="location.href='../pages/quiz.html';">¡Empezamos!</button>
             </div>
         </section>
         <section class="card-graf">
             <div>
-                <h1>Your stats!</h1>
+                <h3 id="chartScore">Puntuaciones</h3>
+                <div id="chart" class="ct-chart ct-perfect-fourth"></div>
             </div>
-            <div>
-                <img src="../assets/img/graf.png" alt="gráfica" class="img-graf">
-            </div>
+
         </section>
         <section>
             <div>
@@ -39,7 +40,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
-    <script src="../script/index.js"></script>
+    <script src="../script/home.js"></script>
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 </body>
 
 </html>
