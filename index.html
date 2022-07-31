@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <title>Inicio</title>
+</head>
+
+<body>
+    <div id="index" class="index-box">
+
+        <div class="index-content">
+
+            <figure id="figure-index">
+                <img src="./assets/img/Logo_WWTBAM_Spain.png" alt="logo" id="logo" class="logo-index">
+            </figure>
+            <section id="wellcomeContent"></section>
+
+
+            <section class="box-log">
+
+                <button id="dropdown-log" class="dropdown-button">Inicia sesión</button>
+
+                <form id="form-log" class="dropdown-content" action="#" method="POST">
+                    <label id="mail-log-lab" class="label-init-form" for="mail-log">Email:</label>
+                    <input id="maillog" class="input-init" name="maillog" type="text" placeholder="Email de login">
+                    <p class="help-text" id="validEmail">Email no registrado</p>
+
+                    <label id="pass-log-lab" class="label-init-form" for="pass-log">Contraseña:</label>
+                    <input id="passlog" class="input-init" name="passlog" type="password" placeholder="Contraseña">
+                    <p class="help-text" id="validpass">Contraseña incorrecta</p>
+
+                    <button id="submit-log" class="submit-button">Enviar</button>
+
+                </form>
+                <button id="dropdown-regGoogle" class="dropdown-button" type="button">Inicia sesión con Google</button>
+                
+            </section>
+
+            <hr id="bar" size="1px" color="white" width="80%"/>
+
+            <section class="box-reg">
+
+                <button id="dropdown-reg" class="dropdown-button">Regístrate</Button>
+
+                <form id="form-reg" action="#" method="POST" class="dropdown-content">
+                    
+                    <label id="mail-reg-lab" class="label-init-form" for="mailreg">Email:</label>
+                    <input id="mailreg" class="input-init" name="mailreg" type="text" placeholder="Email de registro">
+                    <p class="help-text" id="helpEmail">Email Inválido</p>
+
+                    <label id="pass-reg-lab" class="label-init-form" for="passreg">Contraseña:</label>
+                    <input id="passreg" class="input-init" name="passreg" type="password" placeholder="Contraseña">
+                    <p class="help-text" id="helppass">Contraseña inválida: dígitos, minúsculas y mayúsculas</p>
+
+                    <label id="pass-reg-lab-rep" class="label-init-form" for="passregrep">Repite contraseña:</label>
+                    <input id="passregrep" class="input-init" name="passregrep" type="password" placeholder="Repita su contraseña">
+                    <p class="help-text" id="helppass-repeat">Contraseña no coincide</p>
+
+                    <input type="submit" id="submit-reg" class="submit-button" value="Enviar">
+                </form>
+            </section>
+            
+            <button id="startQuiz" class="button-registered">Comenzar</button>
+
+            <button id="unlog" class="button-registered">Desconectar</button>
+        
+            <button id="loggedUsers" class="button-registered">Check users</button>
+
+            <h3 id="chartScore">Puntuaciones</h3>
+            <div id="chart" class="ct-chart ct-perfect-fourth"></div>
+
+
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="./script/index.js"></script>
+</body>
+
+</html>

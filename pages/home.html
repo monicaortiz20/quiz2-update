@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class = "cards-container">
+        <h1 class="home">Home</h1>
+        <section class="user-card">
+            <div>
+                <h1>Your profile</h1>
+            </div>
+            <div>
+                <button class="button-registered" onclick="location.href='../pages/quiz.html';">¡Empezamos!</button>
+            </div>
+        </section>
+        <section class="card-graf">
+            <div>
+                <h1>Your stats!</h1>
+            </div>
+            <div>
+                <img src="../assets/img/graf.png" alt="gráfica" class="img-graf">
+            </div>
+        </section>
+        <section>
+            <div>
+                <button id="unlog" class="button-registered">Desconectar</button>
+            </div>
+        </section>
+        
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="../script/index.js"></script>
+</body>
+
+</html>
