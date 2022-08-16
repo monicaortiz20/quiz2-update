@@ -112,13 +112,6 @@ const signUpUser = (email, password) => {
             // Inicio sesión (Sigh in -> iniciar sesión):
             let user = userCredential.user;
             console.log(`se ha registrado ${user.email} ID:${user.uid}`)
-            // alert(`se ha registrado ${user.email} ID:${user.uid}`)
-
-            // Creación del usuario en Firestore a la misma vez que se hace el registro
-            // createUser({
-            //     id: user.uid,
-            //     email: user.email,
-            // });
 
             window.location.href = "./pages/home.html"
             document.getElementById("dropdown-reg").style.display = "none";
@@ -179,16 +172,6 @@ document.getElementById("form-reg").addEventListener("submit", function (event) 
         mailTextHelp.style.display = "none";
     }
 
-    //validación password de registro (dígitos, minúsculas y mayúsculas):
-    // if (!regexpass.test(pass)) {
-    //     passTextHelp.style.color = "#ee4242";
-    //     passTextHelp.style.display = "block";
-    //     return
-    // } else {
-    //     passTextHelp.style.border = ""
-    //     passTextHelp.style.color = ""
-    //     passTextHelp.style.display = "none";
-    // }
 
     if (pass != pass2 ) {
         passTextHelpTwo.style.color = "#ee4242";
@@ -238,21 +221,6 @@ const signInUser = (email, password) => {
             document.getElementById("unlog").style.display = "flex";
             document.getElementById("startQuiz").style.display = "flex";
             document.getElementById("chartScore").style.display = "flex";
-
-
-    //----------------- Validaciones Login --------------------//
-    //         //validación mail de login:
-    // let emailLg = document.getElementById('maillog').value;
-    // let passLG = document.getElementById('passlog').value;
-
-
-    // if (condition) {
-        
-    // } else {
-        
-    // }
-
-
 
         })
         .catch((error) => {
